@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="main_message">Enter the message</string>
+    <string name="button">SUBMIT</string>
+    <string name="welcome_message">Welcome to the world of android</string>
+    <string name="final_activity_message">Welcome to final Activity</string>
+    <string name="final_activity_button">open final activity</string>
+</resources>
