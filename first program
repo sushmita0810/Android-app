@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.graphics.Color;
+import android.content.res.Resources;
+import android.util.TypedValue;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,13 +34,18 @@ public class MainActivity extends AppCompatActivity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
+        //rules for button
         buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
         buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
-
+        
+        //rules for text for inputting username
         usernameDetails.addRule(RelativeLayout.ABOVE,redButton.getId());
         usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
         usernameDetails.setMargins(0,0,0,50);//margin is in the order left,top,right, bottom
-
+        
+        Resources r=getResources();
+        int px=(int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,200,r.getDisplayMetrics());
+        username.setWidth(px);
 
         sushiLayout.addView(redButton,buttonDetails);
         sushiLayout.addView(username,usernameDetails);
