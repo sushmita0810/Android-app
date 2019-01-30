@@ -1,0 +1,46 @@
+package com.example.sushmita.creatinterface;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.graphics.Color;
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Layout
+        RelativeLayout sushiLayout= new RelativeLayout(this);
+        sushiLayout.setBackgroundColor(Color.MAGENTA);
+        //button
+        Button redButton =new Button(this);
+        redButton.setText("click me bauss");
+        redButton.setBackgroundColor(Color.LTGRAY);
+        //username for adding text
+        EditText username= new EditText(this);
+        redButton.setId(1);
+        username.setId(2);
+
+        RelativeLayout.LayoutParams buttonDetails= new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        RelativeLayout.LayoutParams usernameDetails=new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
+        buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
+
+        usernameDetails.addRule(RelativeLayout.ABOVE,redButton.getId());
+        usernameDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        usernameDetails.setMargins(0,0,0,50);//margin is in the order left,top,right, bottom
+
+
+        sushiLayout.addView(redButton,buttonDetails);
+        sushiLayout.addView(username,usernameDetails);
+        setContentView(sushiLayout);
+    }
+}
