@@ -1,0 +1,30 @@
+package com.example.sushmita.baaton;
+
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        RelativeLayout sushiLayout= new RelativeLayout(this);
+        sushiLayout.setBackgroundColor(Color.MAGENTA);
+        setContentView(R.layout.activity_main);
+
+        Button sushiButton=(Button)findViewById(R.id.sushiButton);
+        sushiButton.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+                        TextView sushiText=(TextView)findViewById(R.id.textView);
+                        sushiText.setText("time is 10:30");
+                    }
+                }
+        );
+    }
+}
